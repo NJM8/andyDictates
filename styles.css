@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -7,6 +8,9 @@
 body {
   background: #22c1c3;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#fdbb2d), to(#22c1c3));
+  background: -webkit-linear-gradient(left, #fdbb2d, #22c1c3);
+  background: -o-linear-gradient(left, #fdbb2d, #22c1c3);
   background: linear-gradient(to right, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
   text-align: center;
@@ -21,8 +25,12 @@ body {
 }
 
 #keywordResults {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 textarea {
@@ -36,3 +44,24 @@ textarea {
 h2 {
   margin: 10px;
 }
+
+button {
+  position: relative;
+  bottom: 20px;
+  right: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 3px 6px;
+}
+
+button:hover, a:hover {
+  -webkit-box-shadow: 2px 3px 2px #757575;
+          box-shadow: 2px 3px 2px #757575;
+}
+
+button:active, a:active {
+  -webkit-box-shadow: inset 2px 3px 2px #757575;
+          box-shadow: inset 2px 3px 2px #757575;
+}
+
+

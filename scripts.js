@@ -22,27 +22,34 @@ document.addEventListener('DOMContentLoaded', function(){
       addToHPI = true;
     }
     
-    if (transcript.includes('finish summary')) {
-      addToHPI = false;
-    } else {
-      hpiElement.textContent = transcript;
-    }
-    
     if (transcript.includes('on exam') || transcript.includes('an exam')) {
       addToOnExam = true;
     }
     
-    if (transcript.includes('finish exam')) {
-      addToOnExam = false;
-    } else {
+    if (addToHPI) {
+      hpiElement.textContent = transcript;
+    }
+
+    if (addToOnExam) {
       onExamElement.textContent = transcript;
     }
 
     if (event.results[0].isFinal) {
       wholeConversation.textContent += `${transcript} `;
+      addToHPI = false;
+      addToOnExam = false;
     }
   });
 
   recognition.addEventListener('end', recognition.start);
   recognition.start();
+
+  const btns = document.querySelectorAll('button');
+  const clipboard = new ClipboardJS(btns);
+  clipboard.on('success', function(e) {
+      console.log(e);
+  });
+  clipboard.on('error', function(e) {
+      console.log(e);
+  });
 });

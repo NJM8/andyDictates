@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Andy Dictates</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/v2.0.0/dist/clipboard.min.js" defer></script>
   <script src="scripts.js" defer></script>
 </head>
 <body>
@@ -15,19 +16,22 @@
     <div>
       <h2>History of Present Illness</h2>
       <p>Activate: 'What I heard you say'</p>
-      <p>Deactivate: 'Finish summary'</p>
+      <p>Deactivate: stop talking</p>
       <textarea name="textarea" id="hpi" cols="40" rows="8"></textarea>
+      <button data-clipboard-target="#hpi">copy</button>
     </div>
     <div>
       <h2>Exam Results</h2>
       <p>Activate: 'On exam'</p>
-      <p>Deactivate: 'Finish exam'</p>
+      <p>Deactivate: stop talking</p>
       <textarea name="textarea" id="onExam" cols="40" rows="8"></textarea>
+      <button data-clipboard-target="#onExam">copy</button>
     </div>
   </div>
   <div>
     <h2>Conversation</h2>
     <textarea name="textarea" id="wholeConversation" cols="100" rows="15"></textarea>
+    <button data-clipboard-target="#wholeConversation">copy</button>
   </div>
 </body>
 </html>
